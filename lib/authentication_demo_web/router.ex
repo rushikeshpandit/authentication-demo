@@ -5,8 +5,10 @@ defmodule AuthenticationDemoWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", AuthenticationDemoWeb do
+  scope "/api/v1", AuthenticationDemoWeb do
     pipe_through :api
+
+    resources "/users", UserController, only: [:create, :show]
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
