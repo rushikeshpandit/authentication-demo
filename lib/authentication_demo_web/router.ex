@@ -8,7 +8,7 @@ defmodule AuthenticationDemoWeb.Router do
   scope "/api/v1", AuthenticationDemoWeb do
     pipe_through :api
 
-    resources "/users", UserController, only: [:create, :show]
+    post "/sign_up", UserController, :create
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
