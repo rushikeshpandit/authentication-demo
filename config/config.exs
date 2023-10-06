@@ -10,6 +10,10 @@ import Config
 config :authentication_demo,
   ecto_repos: [AuthenticationDemo.Repo]
 
+config :authentication_demo, AuthenticationDemoWeb.Guardian,
+       issuer: "AuthenticationDemoWeb",
+       secret_key: "ncdfybjptFjIxTQkd5Vw/M3DW1Q9OCOtP2vH0ZHq8cZSx8NAOdbiH5QAResZ4Vue"
+
 # Configures the endpoint
 config :authentication_demo, AuthenticationDemoWeb.Endpoint,
   url: [host: "localhost"],
